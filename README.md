@@ -13,7 +13,7 @@ So I have decided to try it out for myself, so I can see if it was really that d
 2. Implement a satisfying meta game loop to ensure replay value.
 3. Add a mock monetization layer (in-game ads, in-game purchase).
 
-# Todo
+# To-do
 - Fix sprite gap flickering
 - Implement full game loop from Start to Game Over
 - Implement special move (yellow bird - loitering)
