@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Pipe
+  - ScoringArea
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Sky
+    uniqueID: 637956575
+    locked: 0
+  - name: Pipe
+    uniqueID: 3358124591
+    locked: 0
+  - name: Ground
+    uniqueID: 1514329033
+    locked: 0
+  - name: Bird
+    uniqueID: 2076067167
+    locked: 0
+  - name: UI
+    uniqueID: 2711007187
+    locked: 0
