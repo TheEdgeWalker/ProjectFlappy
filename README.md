@@ -14,6 +14,6 @@ So I have decided to try it out for myself, so I can see if it was really that d
 3. Add a mock monetization layer (in-game ads, in-game purchase).
 
 # Todo
--Fix sprite gap flickering
--Implement full game loop from Start to Game Over
--Implement special move (yellow bird - loitering)
+- Fix sprite gap flickering
+- Implement full game loop from Start to Game Over
+- Implement special move (yellow bird - loitering)
