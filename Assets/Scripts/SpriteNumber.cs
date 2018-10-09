@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpriteNumber : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class SpriteNumber : MonoBehaviour
 	public float changeRate = 1f;
 
 	public Sprite[] source;
-	public SpriteRenderer[] display;
+	public Image[] display;
 
 	private float displayedValue = 0;
 
@@ -20,7 +21,7 @@ public class SpriteNumber : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		if (displayedValue == value)
+		if ((int)displayedValue == value)
 		{
 			return;
 		}
@@ -48,20 +49,19 @@ public class SpriteNumber : MonoBehaviour
 	private void ResetDisplay()
 	{
 		int intValue = (int)displayedValue;
-		int digits = intValue < 10 ? 1 : ((int)System.Math.Log10(intValue)) + 1;
 
-		for (int i = display.Length - 1; i >= 0; --i)
+		for (int i = 0; i < display.Length; ++i)
 		{
-			if (i < display.Length - digits)
-			{
-				display[i].gameObject.SetActive(false);
-			}
-			else
+			if (i == 0 || intValue > 0)
 			{
 				display[i].gameObject.SetActive(true);
 				int digit = intValue % 10;
 				display[i].sprite = source[digit];
 				intValue /= 10;
+			}
+			else
+			{
+				display[i].gameObject.SetActive(false);
 			}
 		}
 	}
