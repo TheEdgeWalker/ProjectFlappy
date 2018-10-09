@@ -16,9 +16,9 @@ public class Bird : MonoBehaviour
 	}
 
 	bool isFlapping = false;
-	private void Update()
+	private void FixedUpdate()
 	{
-		if (!isFlapping && Input.GetKeyDown(KeyCode.Space))
+		if (!isFlapping && Input.GetButtonDown("Flap"))
 		{
 			animator.SetTrigger("Flap");
 			isFlapping = true;
