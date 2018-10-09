@@ -24,6 +24,11 @@ public class Bird : MonoBehaviour
 			isFlapping = true;
 			physicsBody.AddForce(Vector2.up * thrust, ForceMode2D.Impulse);
 		}
+
+		if (Input.GetButtonDown("Special"))
+		{
+			FlappyManager.instance.Loiter(2f);
+		}
 	}
 
 	public void AnimationEvent(string name)
