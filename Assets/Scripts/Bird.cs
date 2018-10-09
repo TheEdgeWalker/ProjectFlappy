@@ -7,12 +7,12 @@ public class Bird : MonoBehaviour
 	public float thrust = 5f;
 
 	private Animator animator;
-	private Rigidbody2D rigidbody;
+	private Rigidbody2D physicsBody;
 
 	private void Start()
 	{
 		animator = GetComponent<Animator>();
-		rigidbody = GetComponent<Rigidbody2D>();
+		physicsBody = GetComponent<Rigidbody2D>();
 	}
 
 	bool isFlapping = false;
@@ -22,7 +22,7 @@ public class Bird : MonoBehaviour
 		{
 			animator.SetTrigger("Flap");
 			isFlapping = true;
-			rigidbody.AddForce(Vector2.up * thrust, ForceMode2D.Impulse);
+			physicsBody.AddForce(Vector2.up * thrust, ForceMode2D.Impulse);
 		}
 	}
 
