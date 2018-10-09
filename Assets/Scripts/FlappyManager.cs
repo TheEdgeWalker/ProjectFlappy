@@ -8,8 +8,21 @@ public class FlappyManager : MonoBehaviour
 
 	public SpriteNumber score;
 
+	public BackgroundScroller skyScroller;
+	public BackgroundScroller groundScroller;
+	public PipeScroller pipeScroller;
+
 	private void Awake()
 	{
 		instance = this;
+	}
+
+	private void Start()
+	{
+	}
+
+	private float timeSinceLastSpeedUp = 0f;
+	private void FixedUpdate()
+	{
 	}
 }

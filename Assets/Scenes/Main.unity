@@ -413,7 +413,7 @@ RectTransform:
   m_Children:
   - {fileID: 734726051}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -661,6 +661,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 734726052}
+  skyScroller: {fileID: 1487687517}
+  groundScroller: {fileID: 668643485}
+  pipeScroller: {fileID: 863242561}
 --- !u!4 &512537502
 Transform:
   m_ObjectHideFlags: 0
@@ -670,9 +673,12 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1487687516}
+  - {fileID: 668643484}
+  - {fileID: 863242560}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -932,8 +938,8 @@ Transform:
   - {fileID: 58783808}
   - {fileID: 642904404}
   - {fileID: 1334365888}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 512537502}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &668643485
 MonoBehaviour:
@@ -946,7 +952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353966232e549ac49a9b4541673d965d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1
 --- !u!61 &668643486
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1127,7 +1133,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &820783088
 GameObject:
@@ -1220,12 +1226,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 863242559}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 512537502}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &863242561
 MonoBehaviour:
@@ -1796,8 +1802,8 @@ Transform:
   - {fileID: 900212091}
   - {fileID: 589745026}
   - {fileID: 1154514293}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 512537502}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1487687517
 MonoBehaviour:
@@ -1810,7 +1816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353966232e549ac49a9b4541673d965d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.5
 --- !u!61 &1487687518
 BoxCollider2D:
   m_ObjectHideFlags: 0
