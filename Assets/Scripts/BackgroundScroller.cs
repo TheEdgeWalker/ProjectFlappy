@@ -22,7 +22,6 @@ public class BackgroundScroller : MonoBehaviour
 	private void Update()
 	{
 		SpriteRenderer leftBackground = null;
-		SpriteRenderer rightBackground = null;
 		float left = float.MaxValue;
 		float right = float.MinValue;
 		foreach (SpriteRenderer background in backgrounds)
@@ -37,7 +36,6 @@ public class BackgroundScroller : MonoBehaviour
 
 			if (right < background.bounds.max.x)
 			{
-				rightBackground = background;
 				right = background.bounds.max.x;
 			}
 		}
