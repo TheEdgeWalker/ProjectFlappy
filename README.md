@@ -17,6 +17,8 @@ So I have decided to try it out for myself.
 # To-do
 - Fix sprite gap flickering
 - Implement full game loop from Start to Game Over
+  - Implement intro scene
+  - Implement meta-game
 - ~~Implement special move (yellow bird - loitering)~~
   - Implement a proper skill system
   - Port existing logic to skill system
