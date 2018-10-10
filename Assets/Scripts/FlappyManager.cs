@@ -26,7 +26,6 @@ public class FlappyManager : MonoBehaviour
 		UpdateSpeed(speed);
 	}
 
-	private float timeSinceLastSpeedUp = 0f;
 	private void FixedUpdate()
 	{
 	}
