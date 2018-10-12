@@ -20,5 +20,6 @@ So I have decided to try it out for myself.
   - Implement intro scene
   - Implement meta-game
 - ~~Implement special move (yellow bird - loitering)~~
-  - Implement a proper skill system
-  - Port existing logic to skill system
+  - ~~Implement a proper skill system~~
+  - ~~Port existing logic to skill system~~
+  - Implement Loiter as a Skill
