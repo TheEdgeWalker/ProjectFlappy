@@ -22,4 +22,6 @@ So I have decided to try it out for myself.
 - ~~Implement special move (yellow bird - Brake)~~
   - ~~Implement a proper skill system~~
   - ~~Port existing logic to skill system~~
-  - Implement Brake as a Skill
+  - ~~Implement Brake as a Skill~~
+  - Implement Buff System
+    - Implement Brake as a Buff
