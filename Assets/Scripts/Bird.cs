@@ -4,39 +4,36 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
-	public float thrust = 5f;
-
 	private Animator animator;
 	private Rigidbody2D physicsBody;
+
+	private SkillManager skillManager;
 
 	private void Start()
 	{
 		animator = GetComponent<Animator>();
 		physicsBody = GetComponent<Rigidbody2D>();
+
+		skillManager = new SkillManager(this);
+		skillManager.AddSkill(new Flap());
 	}
 
-	bool isFlapping = false;
 	private void FixedUpdate()
 	{
-		if (!isFlapping && Input.GetButtonDown("Flap"))
+		if (Input.GetButtonDown("Flap"))
 		{
-			animator.SetTrigger("Flap");
-			isFlapping = true;
-			physicsBody.AddForce(Vector2.up * thrust, ForceMode2D.Impulse);
+			skillManager.CastSkill(0);
 		}
 
 		if (Input.GetButtonDown("Special"))
 		{
-			FlappyManager.instance.Loiter(2f);
+			skillManager.CastSkill(1);
 		}
 	}
 
-	public void AnimationEvent(string name)
+	public void SkillEnd()
 	{
-		if (name == "FlapEnd")
-		{
-			isFlapping = false;
-		}
+		skillManager.SkillEnd();
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
@@ -53,5 +50,20 @@ public class Bird : MonoBehaviour
 		{
 			FlappyManager.instance.score.value += 5;
 		}
+	}
+
+	public void TriggerAnimation(string name)
+	{
+		animator.SetTrigger(name);
+	}
+
+	public void AddForce(Vector2 force)
+	{
+		physicsBody.AddForce(force, ForceMode2D.Impulse);
+	}
+
+	public void Loiter(float duration)
+	{
+		FlappyManager.instance.Loiter(duration);
 	}
 }

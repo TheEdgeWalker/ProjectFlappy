@@ -30,10 +30,10 @@ public class FlappyManager : MonoBehaviour
 	{
 	}
 
-	private void UpdateSpeed(float speed)
+	private void UpdateSpeed(float newSpeed)
 	{
-		skyScroller.speed = speed / 2f;
-		groundScroller.speed = pipeScroller.speed = speed;
+		skyScroller.speed = newSpeed / 2f;
+		groundScroller.speed = pipeScroller.speed = newSpeed;
 	}
 
 	public async void Loiter(float duration)

@@ -2,43 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill
+public abstract class Skill
 {
+	public SkillManager skillManager;
+
 	public readonly string name;
 	public readonly float cooldown;
+	public readonly bool isCancelable;
 
-	private float cooldownEndTime;
-	public float CooldownEndTime
-	{
-		get
-		{
-			return cooldownEndTime;
-		}
-	}
-
-	public Skill(string name, float cooldown)
+	protected Skill(string name, float cooldown, bool isCancelable)
 	{
 		this.name = name;
 		this.cooldown = cooldown;
-		cooldownEndTime = 0f;
+		this.isCancelable = isCancelable;
+	}
+
+	public float cooldownEndTime
+	{
+		get;
+		private set;
+	}
+
+	public bool isAvailable
+	{
+		get
+		{
+			return cooldownEndTime <= Time.time ? true : false;
+		}
 	}
 
 	public void Cast()
 	{
-		if (IsAvailable())
-		{
-			cooldownEndTime = Time.time + cooldownEndTime;
-			SkillImpl();
-		}
+		cooldownEndTime = Time.time + cooldownEndTime;
+		SkillImpl();
 	}
 
-	protected virtual void SkillImpl()
-	{
-		Debug.LogError("Please implement skill!: " + name);
-	}
-
-	public bool IsAvailable()
-	{
-		return cooldownEndTime <= Time.time ? true : false;
-	}
+	protected abstract void SkillImpl();
 }
