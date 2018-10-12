@@ -16,6 +16,7 @@ public class Bird : MonoBehaviour
 
 		skillManager = new SkillManager(this);
 		skillManager.AddSkill(new Flap());
+		skillManager.AddSkill(new Brake());
 	}
 
 	private void FixedUpdate()
@@ -62,8 +63,8 @@ public class Bird : MonoBehaviour
 		physicsBody.AddForce(force, ForceMode2D.Impulse);
 	}
 
-	public void Loiter(float duration)
+	public void Brake(float duration)
 	{
-		FlappyManager.instance.Loiter(duration);
+		FlappyManager.instance.Brake(duration);
 	}
 }

@@ -36,7 +36,7 @@ public class FlappyManager : MonoBehaviour
 		groundScroller.speed = pipeScroller.speed = newSpeed;
 	}
 
-	public async void Loiter(float duration)
+	public async void Brake(float duration)
 	{
 		UpdateSpeed(0f);
 		await Task.Delay(TimeSpan.FromSeconds(duration));
