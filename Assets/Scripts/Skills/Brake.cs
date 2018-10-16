@@ -11,6 +11,6 @@ public class Brake : Skill
 	protected override void SkillImpl()
 	{
 		skillManager.owner.TriggerAnimation("Brake");
-		skillManager.owner.Brake(2f);
+		skillManager.owner.Brake(1f);
 	}
 }
