@@ -38,7 +38,7 @@ public class SkillManager
 		Skill skill = skills[index];
 		if (!skill.isAvailable)
 		{
-			Debug.Log("Canno cast skill, currently on cooldown: " + skill.name);
+			Debug.Log("Cannot cast skill, currently on cooldown: " + skill.name);
 			return;
 		}
 
