@@ -33,7 +33,7 @@ public abstract class Skill
 
 	public void Cast()
 	{
-		cooldownEndTime = Time.time + cooldownEndTime;
+		cooldownEndTime = Time.time + cooldown;
 		SkillImpl();
 	}
 

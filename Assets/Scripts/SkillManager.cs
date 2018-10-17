@@ -35,12 +35,14 @@ public class SkillManager
 			return;
 		}
 
-		currentSkill = skills[index];
-		if (currentSkill.isAvailable)
+		Skill skill = skills[index];
+		if (!skill.isAvailable)
 		{
-			Debug.Log("Canno cast skill, currently on cooldown: " + currentSkill.name);
+			Debug.Log("Canno cast skill, currently on cooldown: " + skill.name);
+			return;
 		}
 
+		currentSkill = skill;
 		currentSkill.Cast();
 	}
 
