@@ -67,4 +67,9 @@ public class Bird : MonoBehaviour
 	{
 		FlappyManager.instance.Brake(duration);
 	}
+
+	public void OnSkillButton(int index)
+	{
+		skillManager.CastSkill(index);
+	}
 }
