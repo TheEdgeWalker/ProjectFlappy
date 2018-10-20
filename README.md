@@ -15,16 +15,8 @@ So I have decided to try it out for myself.
 4. Implement a data driven story system.
 
 # To-do
-- Fix sprite gap flickering
-- Implement full game loop from Start to Game Over
-  - Implement intro scene
-  - Implement meta-game
-- ~~Implement special move (yellow bird - Brake)~~
-  - ~~Implement a proper skill system~~
-  - ~~Port existing logic to skill system~~
-  - ~~Implement Brake as a Skill~~
-- Implement UI
-  - In-game UI
-    - Score counter
-    - Skill buttons
-    - Pause button
+- Skill system
+  - Make data driven
+- Bugs
+  - Sprite gap flickering
+    - Make sprite atlas
