@@ -23,5 +23,8 @@ So I have decided to try it out for myself.
   - ~~Implement a proper skill system~~
   - ~~Port existing logic to skill system~~
   - ~~Implement Brake as a Skill~~
-  - Implement Buff System
-    - Implement Brake as a Buff
+- Implement UI
+  - In-game UI
+    - Score counter
+    - Skill buttons
+    - Pause button
