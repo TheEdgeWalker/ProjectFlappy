@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public abstract class Skill
 {
@@ -9,6 +10,8 @@ public abstract class Skill
 	public readonly string name;
 	public readonly float cooldown;
 	public readonly bool isCancelable;
+
+	private List<GameObject> observers = new List<GameObject>();
 
 	protected Skill(string name, float cooldown, bool isCancelable)
 	{
@@ -35,7 +38,17 @@ public abstract class Skill
 	{
 		cooldownEndTime = Time.time + cooldown;
 		SkillImpl();
+
+		foreach (GameObject observer in observers)
+		{
+			ExecuteEvents.Execute<ISkillMessageTarget>(observer, null, (target, data) => target.Cast(cooldownEndTime));
+		}
 	}
 
 	protected abstract void SkillImpl();
+
+	public void AddObserver(GameObject observer)
+	{
+		observers.Add(observer);
+	}
 }

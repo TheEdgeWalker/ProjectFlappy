@@ -9,7 +9,7 @@ public class Bird : MonoBehaviour
 
 	private SkillManager skillManager;
 
-	private void Start()
+	private void Awake()
 	{
 		animator = GetComponent<Animator>();
 		physicsBody = GetComponent<Rigidbody2D>();
@@ -71,5 +71,10 @@ public class Bird : MonoBehaviour
 	public void OnSkillButton(int index)
 	{
 		skillManager.CastSkill(index);
+	}
+
+	public void AddSkillObserver(GameObject observer, int index)
+	{
+		skillManager.AddObserver(observer, index);
 	}
 }

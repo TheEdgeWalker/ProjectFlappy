@@ -56,4 +56,15 @@ public class SkillManager
 		skill.skillManager = this;
 		skills.Add(skill);
 	}
+
+	public void AddObserver(GameObject observer, int index)
+	{
+		if (skills == null || skills.Count <= index)
+		{
+			Debug.LogError("Cannot add observer, invalid index: " + index);
+			return;
+		}
+
+		skills[index].AddObserver(observer);
+	}
 }

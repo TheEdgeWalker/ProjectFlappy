@@ -737,10 +737,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61e89edcbf144848b68368b64c9fda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bird: {fileID: 1337641562}
   score: {fileID: 734726052}
   skyScroller: {fileID: 1487687517}
   groundScroller: {fileID: 668643485}
   pipeScroller: {fileID: 863242561}
+  skillButtons:
+  - {fileID: 1419796813}
+  - {fileID: 2043824921}
 --- !u!4 &512537502
 Transform:
   m_ObjectHideFlags: 0
@@ -2052,8 +2056,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa75b7d6fba34ec5bb78bb8446aa494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillIndex: 0
   foreGround: {fileID: 714666260}
-  backGround: {fileID: 1419796811}
 --- !u!1 &1487687515
 GameObject:
   m_ObjectHideFlags: 0
@@ -2405,5 +2409,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa75b7d6fba34ec5bb78bb8446aa494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillIndex: 1
   foreGround: {fileID: 1905378227}
-  backGround: {fileID: 2043824919}

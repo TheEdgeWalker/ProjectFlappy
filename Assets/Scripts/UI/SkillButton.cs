@@ -3,25 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SkillButton : MonoBehaviour
+public class SkillButton : MonoBehaviour, ISkillMessageTarget
 {
+	public int skillIndex;
 	public Image foreGround;
-
-	public Skill skill;
 
 	private void Start()
 	{
 		if (foreGround.type != Image.Type.Filled)
 		{
 			Debug.LogError("Foreground is not Filled: " + name);
+			return;
 		}
 	}
 
-	private void Update()
+	public void Cast(float cooldownEndTime)
 	{
-		if (skill != null)
-		{
-
-		}
+		Debug.Log("I see that skill is Cast!: " + name);
 	}
 }

@@ -8,11 +8,15 @@ public class FlappyManager : MonoBehaviour
 {
 	public static FlappyManager instance;
 
+	public Bird bird;
+
 	public SpriteNumber score;
 
 	public BackgroundScroller skyScroller;
 	public BackgroundScroller groundScroller;
 	public PipeScroller pipeScroller;
+
+	public SkillButton[] skillButtons;
 
 	private float speed = 2f;
 
@@ -24,6 +28,11 @@ public class FlappyManager : MonoBehaviour
 	private void Start()
 	{
 		UpdateSpeed(speed);
+
+		foreach (SkillButton skillButton in skillButtons)
+		{
+			bird.AddSkillObserver(skillButton.gameObject, skillButton.skillIndex);
+		}
 	}
 
 	private void FixedUpdate()
