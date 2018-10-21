@@ -6,7 +6,11 @@ using UnityEngine;
 
 public class FlappyManager : MonoBehaviour
 {
-	public static FlappyManager instance;
+	public static FlappyManager instance
+	{
+		get;
+		private set;
+	}
 
 	public Bird bird;
 

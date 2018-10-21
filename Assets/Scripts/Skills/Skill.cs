@@ -5,6 +5,14 @@ using UnityEngine.EventSystems;
 
 public abstract class Skill
 {
+	public struct Data
+	{
+		public string name;
+		public float cooldown;
+		public bool isCancelable;
+	}
+	private readonly Data data;
+
 	public SkillManager skillManager;
 
 	public readonly string name;
@@ -12,6 +20,11 @@ public abstract class Skill
 	public readonly bool isCancelable;
 
 	private List<GameObject> observers = new List<GameObject>();
+
+	protected Skill(Skill.Data data)
+	{
+		this.data = data;
+	}
 
 	protected Skill(string name, float cooldown, bool isCancelable)
 	{

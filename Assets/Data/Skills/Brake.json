@@ -1,0 +1,5 @@
+{
+	"name":"Brake",
+	"cooldown":10,
+	"isCancelable":false
+}
