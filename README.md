@@ -15,8 +15,10 @@ So I have decided to try it out for myself.
 4. Implement a data driven story system.
 
 # To-do
-- Skill system
+- Implement
   - Make data driven
-- Bugs
+- Refactor
+  - Split skill button and cooldown timer
+- Fix
   - Sprite gap flickering
     - Make sprite atlas
