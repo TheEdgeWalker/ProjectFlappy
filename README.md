@@ -16,7 +16,7 @@ So I have decided to try it out for myself.
 
 # To-do
 - Implement
-  - Make data driven
+  - Make skill system data driven
 - Refactor
   - Split skill button and cooldown timer
 - Fix
