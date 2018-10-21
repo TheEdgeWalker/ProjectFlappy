@@ -16,7 +16,9 @@ So I have decided to try it out for myself.
 
 # To-do
 - Implement
-  - Make skill system data driven
+  - Data driven
+    - Skill system
+    - Character (Bird) system
 - Refactor
   - Split skill button and cooldown timer
 - Fix
