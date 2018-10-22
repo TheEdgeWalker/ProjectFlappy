@@ -23,7 +23,7 @@ public class SkillManager
 
 	public void CastSkill(int index)
 	{
-		if (skills == null || skills.Count <= index || index < 0)
+		if (IsInvalidIndex(index))
 		{
 			Debug.LogError("Cannot cast skill, invalid index: " + index);
 			return;
