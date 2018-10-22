@@ -23,22 +23,22 @@ public class SkillManager
 
 	public void CastSkill(int index)
 	{
-		if (skills == null || skills.Count <= index)
+		if (skills == null || skills.Count <= index || index < 0)
 		{
 			Debug.LogError("Cannot cast skill, invalid index: " + index);
 			return;
 		}
 
-		if (currentSkill != null && !currentSkill.isCancelable)
+		if (currentSkill != null && !currentSkill.data.isCancelable)
 		{
-			Debug.Log("Cannot cast skill, current skill is not finished: " + currentSkill.name);
+			Debug.Log("Cannot cast skill, current skill is not finished: " + currentSkill.data.name);
 			return;
 		}
 
 		Skill skill = skills[index];
 		if (!skill.isAvailable)
 		{
-			Debug.Log("Cannot cast skill, currently on cooldown: " + skill.name);
+			Debug.Log("Cannot cast skill, currently on cooldown: " + skill.data.name);
 			return;
 		}
 
@@ -51,20 +51,37 @@ public class SkillManager
 		currentSkill = null;
 	}
 
-	public void AddSkill(Skill skill)
+	public void AddSkill(string name)
 	{
+		Skill skill = DataManager.instance.skillDataSheet.GenerateSkill(name);
 		skill.skillManager = this;
 		skills.Add(skill);
 	}
 
+	public Skill.Data GetSkillData(int index)
+	{
+		if (IsInvalidIndex(index))
+		{
+			Debug.LogError("Cannot get Skill data, invalid index: " + index);
+			return new Skill.Data();
+		}
+
+		return skills[index].data;
+	}
+
 	public void AddObserver(GameObject observer, int index)
 	{
-		if (skills == null || skills.Count <= index)
+		if (IsInvalidIndex(index))
 		{
 			Debug.LogError("Cannot add observer, invalid index: " + index);
 			return;
 		}
 
 		skills[index].AddObserver(observer);
+	}
+
+	private bool IsInvalidIndex(int index)
+	{
+		return skills == null || skills.Count <= index || index < 0;
 	}
 }

@@ -8,8 +8,9 @@ public class SkillButton : MonoBehaviour, ISkillMessageTarget
 	public int skillIndex;
 	public Image foreGround;
 
-	private float skillCastTime = 0f;
-	private float cooldownEndTime = 0f;
+	private float skillCastTime = -1f;
+
+	private Skill.Data skillData;
 
 	private void Start()
 	{
@@ -18,11 +19,14 @@ public class SkillButton : MonoBehaviour, ISkillMessageTarget
 			Debug.LogError("Foreground is not Filled: " + name);
 			return;
 		}
+
+		skillData = FlappyManager.instance.bird.skillManager.GetSkillData(skillIndex);
 	}
 
 	private void Update()
 	{
-		if (Time.time >= cooldownEndTime)
+		float cooldownEndTime = skillCastTime + skillData.cooldown;
+		if (skillCastTime < 0 || Time.time >= cooldownEndTime)
 		{
 			foreGround.gameObject.SetActive(false);
 		}
@@ -35,11 +39,10 @@ public class SkillButton : MonoBehaviour, ISkillMessageTarget
 			foreGround.fillAmount = remainingTime / totalDuration;
 		}
 	}
-
-	public void Cast(float cooldownEndTime)
+	
+	public void Cast()
 	{
 		Debug.Log("I see that skill is Cast!: " + name);
-		this.skillCastTime = Time.time;
-		this.cooldownEndTime = cooldownEndTime;
+		skillCastTime = Time.time;
 	}
 }

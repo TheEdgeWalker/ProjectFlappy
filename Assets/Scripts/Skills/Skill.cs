@@ -11,26 +11,15 @@ public abstract class Skill
 		public float cooldown;
 		public bool isCancelable;
 	}
-	private readonly Data data;
+	public readonly Data data;
 
 	public SkillManager skillManager;
-
-	public readonly string name;
-	public readonly float cooldown;
-	public readonly bool isCancelable;
 
 	private List<GameObject> observers = new List<GameObject>();
 
 	protected Skill(Skill.Data data)
 	{
 		this.data = data;
-	}
-
-	protected Skill(string name, float cooldown, bool isCancelable)
-	{
-		this.name = name;
-		this.cooldown = cooldown;
-		this.isCancelable = isCancelable;
 	}
 
 	public float cooldownEndTime
@@ -49,12 +38,12 @@ public abstract class Skill
 
 	public void Cast()
 	{
-		cooldownEndTime = Time.time + cooldown;
+		cooldownEndTime = Time.time + data.cooldown;
 		SkillImpl();
 
 		foreach (GameObject observer in observers)
 		{
-			ExecuteEvents.Execute<ISkillMessageTarget>(observer, null, (target, data) => target.Cast(cooldownEndTime));
+			ExecuteEvents.Execute<ISkillMessageTarget>(observer, null, (target, data) => target.Cast());
 		}
 	}
 

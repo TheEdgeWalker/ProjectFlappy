@@ -39,10 +39,6 @@ public class FlappyManager : MonoBehaviour
 		}
 	}
 
-	private void FixedUpdate()
-	{
-	}
-
 	private void UpdateSpeed(float newSpeed)
 	{
 		skyScroller.speed = newSpeed / 2f;

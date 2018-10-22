@@ -14,7 +14,7 @@ public class DataSheet<T>
 		{
 			string json = fileInfo.OpenText().ReadToEnd();
 			T row = JsonUtility.FromJson<T>(json);
-			data.Add(fileInfo.Name, row);
+			data.Add(Path.GetFileNameWithoutExtension(fileInfo.Name), row);
 		}
 	}
 

@@ -2,5 +2,5 @@
 
 public interface ISkillMessageTarget : IEventSystemHandler
 {
-	void Cast(float cooldownEndTime);
+	void Cast();
 }

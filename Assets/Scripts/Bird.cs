@@ -7,7 +7,11 @@ public class Bird : MonoBehaviour
 	private Animator animator;
 	private Rigidbody2D physicsBody;
 
-	private SkillManager skillManager;
+	public SkillManager skillManager
+	{
+		get;
+		private set;
+	}
 
 	private void Awake()
 	{
@@ -15,8 +19,8 @@ public class Bird : MonoBehaviour
 		physicsBody = GetComponent<Rigidbody2D>();
 
 		skillManager = new SkillManager(this);
-		skillManager.AddSkill(new Flap());
-		skillManager.AddSkill(new Brake());
+		skillManager.AddSkill("Flap");
+		skillManager.AddSkill("Brake");
 	}
 
 	private void FixedUpdate()

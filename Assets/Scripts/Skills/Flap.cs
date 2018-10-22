@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Flap : Skill
 {
-	public Flap() : base("Flap", 0.5f, false)
+	public Flap(Data data) : base(data)
 	{
 	}
 

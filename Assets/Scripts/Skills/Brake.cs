@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Brake : Skill
 {
-	public Brake() : base("Brake", 10f, false)
+	public Brake(Data data) : base(data)
 	{
 	}
 
