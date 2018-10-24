@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Bird : MonoBehaviour
@@ -13,6 +13,12 @@ public class Bird : MonoBehaviour
 		private set;
 	}
 
+	public float speed
+	{
+		get;
+		private set;
+	}
+
 	private void Awake()
 	{
 		animator = GetComponent<Animator>();
@@ -21,6 +27,8 @@ public class Bird : MonoBehaviour
 		skillManager = new SkillManager(this);
 		skillManager.AddSkill("Flap");
 		skillManager.AddSkill("Brake");
+
+		speed = 2f;
 	}
 
 	private void FixedUpdate()
@@ -67,9 +75,12 @@ public class Bird : MonoBehaviour
 		physicsBody.AddForce(force, ForceMode2D.Impulse);
 	}
 
-	public void Brake(float duration)
+	public async void Brake(float duration)
 	{
-		FlappyManager.instance.Brake(duration);
+		float temp = speed;
+		speed = 0;
+		await Task.Delay(TimeSpan.FromSeconds(duration));
+		speed = temp;
 	}
 
 	public void OnSkillButton(int index)

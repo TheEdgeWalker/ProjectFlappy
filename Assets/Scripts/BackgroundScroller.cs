@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BackgroundScroller : MonoBehaviour
 {
-	public float speed = 1f;
-
 	private SpriteRenderer[] backgrounds;
 
 	private float screenRight;
+
+	private Bird bird;
 
 	private void Start()
 	{
@@ -17,6 +15,8 @@ public class BackgroundScroller : MonoBehaviour
 		Camera camera = Camera.main.GetComponent<Camera>();
 		float cameraWidth = camera.orthographicSize * Screen.width / Screen.height;
 		screenRight = camera.transform.position.x + cameraWidth;
+
+		bird = FlappyManager.instance.bird;
 	}
 
 	private void Update()
@@ -26,7 +26,7 @@ public class BackgroundScroller : MonoBehaviour
 		float right = float.MinValue;
 		foreach (SpriteRenderer background in backgrounds)
 		{
-			background.transform.position -= new Vector3(speed * Time.deltaTime, 0f);
+			background.transform.position -= new Vector3(bird.speed / 2 * Time.deltaTime, 0f);
 
 			if (left > background.bounds.min.x)
 			{
