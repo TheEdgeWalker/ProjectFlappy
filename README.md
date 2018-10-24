@@ -16,11 +16,26 @@ So I have decided to try it out for myself.
 
 # To-do
 - Implement
-  - Data driven
-    - Skill system
-    - Character (Bird) system
+  - Gameplay
+    - (Done!) Scrolling
+    - (Done!) Skill
+      - (Done!) Flap
+      - (Done!) Brake
+      - Zoom
+      - Invincible
+        - Buff
+  - UI
+    - (Done!) Sprite number (Score)
+    - Skill buttons
+      - (Done!) Cooldown timer
+      - Icons
+  - (Done!) ata System
+    - (Done!) Skill
+    - Character (Bird)
 - Refactor
   - Split skill button and cooldown timer
+  - (Done!) Move speed property from FlappyManager to Bird
 - Fix
   - Sprite gap flickering
     - Make sprite atlas
+  - Make brake more smooth
