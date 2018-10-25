@@ -29,7 +29,7 @@ So I have decided to try it out for myself.
     - Skill buttons
       - (Done!) Cooldown timer
       - Icons
-  - (Done!) ata System
+  - (Done!) Data System
     - (Done!) Skill
     - Character (Bird)
 - Refactor
